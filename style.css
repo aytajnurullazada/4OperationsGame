@@ -1,0 +1,42 @@
+body {
+}
+
+.game {
+    width: 500px;
+    padding: 10px;
+    border-radius: 10px;
+    box-shadow: 0 .5rem 1rem rgba(0, 75, 75, 075);
+}
+
+.header {
+    border: 2px solid black;
+    border-radius: 10px;
+    margin-bottom: 10px;
+}
+
+h2 {
+    text-align: center;
+
+}
+
+.main {
+    text-align: center;
+    margin-bottom: 10px;
+}
+
+.result {
+    text-align: center;
+
+}
+
+span {
+    padding: 5px;
+}
+
+#correct {
+    background-color: green;
+}
+
+#wrong {
+    background-color: red;
+}

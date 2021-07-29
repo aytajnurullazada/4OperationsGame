@@ -1,0 +1,73 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <script src="https://kit.fontawesome.com/560752f518.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="./style.css">
+    <title>Four Operations Math Game</title>
+</head>
+<body>
+<div class="game">
+    <div class="header">
+        <h2>Four Operations Math Game</h2>
+    </div>
+    <div class="main">
+        <span id="num1">1</span>
+        <span id="operation">+</span>
+        <span id="num2">1</span>
+        <span>=</span>
+        <input id="answer" type="text">
+        <button onclick="Calc()">Calculate</button>
+    </div>
+    <div class="result">
+        <span id="correct">0</span>
+        <span id="wrong">0</span>
+    </div>
+</div>
+<div id="elem"></div>
+
+<script>
+    let n1 = 1
+    let n2 = 1
+    let a = 0
+    const oper = ['+', '-', '*', '/']
+
+    function Calc() {
+        document.getElementById('operation').innerHTML = oper[a]
+        let answer = document.getElementById('answer').value;
+
+        let cavab;
+
+        if (oper[a] == oper[0]) {
+            cavab = n1 + n2
+        } else if (oper[a] == oper[1]) {
+            cavab = n1 - n2
+        } else if (oper[a] == oper[2]) {
+            cavab = n1 * n2
+        } else {
+            cavab = n1 / n2
+        }
+        if (cavab == answer) {
+            let dogru = document.getElementById('correct').textContent;
+            dogru++
+            document.getElementById('correct').innerHTML = dogru;
+
+        } else {
+            let yanlish = document.getElementById('wrong').textContent;
+            yanlish++
+            document.getElementById('wrong').innerHTML = yanlish;
+
+        }
+        n1 = Math.floor(Math.random() * 100);
+        document.getElementById('num1').innerHTML = n1;
+        n2 = Math.floor(Math.random() * 100);
+        document.getElementById('num2').innerHTML = n2;
+        a = Math.floor(Math.random() * 4);
+        document.getElementById('operation').innerHTML = oper[a];
+    }
+</script>
+</body>
+</html>
